@@ -1,0 +1,14 @@
+=lion.heaven.af.mil:1.2.3.4
+@heaven.af.mil:1.2.3.4
+@3.2.1.in-addr.arpa:1.2.3.4
+
+=tiger.heaven.af.mil:1.2.3.5
+.heaven.af.mil:1.2.3.5:a
+.3.2.1.in-addr.arpa:1.2.3.5:a
+
+=bear.heaven.af.mil:1.2.3.6
+.heaven.af.mil:1.2.3.6:b
+.3.2.1.in-addr.arpa:1.2.3.6:b
+
+=cheetah.heaven.af.mil:1.2.3.248
+=panther.heaven.af.mil:1.2.3.249
