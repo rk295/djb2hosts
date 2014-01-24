@@ -5,22 +5,25 @@ Quick script to read in a [Tinydns](http://tinydns.org/) format file and output 
 
 Simply reads STDIN, use like:
 
-<pre>
+```
 % ./djb2hosts.pl < tinydns-format-zone-file
-</pre>
+```
 
 Will output on stdout a file of the format:
 
-<pre>
+```
 1.2.3.4    bart
 6.7.8.9    homer, pieman
 etc.
-</pre>
+```
 
-It putputs some diagnostics to STDERR, so you'll want to redirect that somewhere. I used:
+It putputs some diagnostics to STDERR, so you'll want to either redirect that somewhere, or push STDOUT to a file. I used:
 
-<pre>
+```
 % ./djb2hosts.pl < tinydns-format-zone-file > hosts.file
-</pre>
+```
+
+Tinydns documentation
+---------------------
 
 The tinydns file format is documented [here](http://cr.yp.to/djbdns/tinydns-data.html). The script currently throws away anything that isn't a A or a CNAME record.
