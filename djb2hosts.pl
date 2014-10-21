@@ -31,23 +31,13 @@ while(<>){
 		print STDERR "found a NS/SOA line, ignoring\n";
 		next;
 
-	}elsif ( $op eq "=" ){
+    }elsif ( $op eq "=" || $op eq "+" || $op eq "@" ){
 
-		print STDERR "found an A record\n";
-		$output{$ip} = $data;
-		next;
-
-	}elsif( $op eq "+" ){
-
-		print STDERR "found a CNAME record\n";
-		$output{$ip} .= " " . $data;
-		next;
-
-	}elsif( $op eq "@" ){
-
-		print STDERR "found a MX record\n";
-		$output{$ip} .= " " . $data;
-		next;
+        print STDERR "found an A, CNAME or an MX record - $data\n";
+        my @parts = split('\.', $data);
+        my $line = $data . " " . $parts[0] . "." . $parts[1] . " " . $parts[0] . " ";
+        $output{$ip} .= $line;
+        next;
 
 	}else{
 
